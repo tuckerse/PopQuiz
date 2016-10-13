@@ -1,0 +1,42 @@
+<head>
+    <title>Pop Quiz</title>
+</head>
+<body>
+    {{> leaderboard}}
+</body>
+
+<template name="leaderboard">
+	{{#if mode0}}
+    	{{#each player0}}
+        <li class="player {{selectedClass}}">{{name}}: {{score}}</li>
+    	{{/each}}
+    {{/if}}
+
+    {{#if mode1}}
+    	Hi there, {{player1.name}}. Order a soda and we'll get started!
+    {{/if}}
+
+    {{#if mode2}}
+    	Question: {{question.text}} <br>
+    	A: {{question.a}} <br>
+    	B: {{question.b}} <br>
+    	C: {{question.c}} <br>
+    	D: {{question.d}} <br>
+    {{/if}}
+
+     {{#if mode3}}
+    	Question: {{question.text}} <br>
+    	A: {{question.a}} <br>
+    	B: {{question.b}} <br>
+    	C: {{question.c}} <br>
+    	D: {{question.d}} <br>
+    	{{#if correct}}
+    		Correct!
+    	{{/if}}
+    	{{#if incorrect}}
+    		Incorrect!
+    	{{/if}}
+
+    {{/if}}
+
+</template>
